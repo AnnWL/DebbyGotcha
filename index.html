@@ -14,6 +14,9 @@
     <header>
       <h1>Gamifying Tasks - DebbyGotcha!</h1>
     </header>
+
+    <audio id="bg-music" src="./assets/piki.mp3" loop></audio>
+
     <div id="grid-container">
       <div id="task">
         <!-- Impute Task Section -->
@@ -95,6 +98,18 @@
         </div>
       </div>
     </div>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const music = document.getElementById("bg-music");
+        const startMusic = () => {
+          music.play().catch((e) => {
+            console.warn("Music play failed:", e);
+          });
+          document.removeEventListener("click", startMusic);
+        };
+        document.addEventListener("click", startMusic);
+      });
+    </script>
     <script src="./app_todo.js"></script>
     <script src="./app_tama.js"></script>
   </body>

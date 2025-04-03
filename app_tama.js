@@ -72,7 +72,7 @@ function initTama() {
   gameOver = false;
 
   if (timer) clearInterval(timer);
-  timer = setInterval(runGame, 8000);
+  timer = setInterval(runGame, 20000);
   gameAnimationEl.src = "./assets/at_rest_1.png";
 
   renderTama();
@@ -151,7 +151,6 @@ function setAnimations(id, timer_animation = 500) {
     gameAnimationEl.src = frames[current];
   }, timer_animation);
 
-  // Stop animation after 5 seconds with smooth transition
   setTimeout(() => {
     clearInterval(animationInterval);
     animationInterval = null;
@@ -174,10 +173,10 @@ function handlePlay() {
     gameAnimationEl.alt = altAssets[chosenActivity];
     gameMessageEl.innerText = messageAssets[chosenActivity];
     state.boredom += 2;
-    num_points -= 1;
+    num_points -= 2;
   } else {
     gameAnimationEl.src = "./assets/angry_1.png";
-    gameAnimationEl.alt = "a girl angry and refusing to do any task";
+    gameAnimationEl.alt = "an angry girl refusing to do any task";
     gameMessageEl.innerText = "Not enough points. Complete tasks first!";
   }
 }
@@ -192,7 +191,7 @@ function handleSleep() {
     num_points -= 5;
   } else {
     gameAnimationEl.src = "./assets/angry_1.png";
-    gameAnimationEl.alt = "a girl angry and refusing to do any task";
+    gameAnimationEl.alt = "an angry girl refusing to do any task";
     gameMessageEl.innerText = "Not enough points. Complete tasks first!";
   }
 }
@@ -212,7 +211,7 @@ function handleEat() {
     }
   } else {
     gameAnimationEl.src = "./assets/angry_1.png";
-    gameAnimationEl.alt = "a girl angry and refusing to do any task";
+    gameAnimationEl.alt = "an angry girl refusing to do any task";
     gameMessageEl.innerText = "Not enough points. Complete tasks first!";
   }
 }
@@ -230,11 +229,12 @@ sleepBtnEl.addEventListener("click", handleSleep);
 gameAnimationEl.addEventListener("mouseenter", function () {
   const randomizer = Math.floor(Math.random() * imageAssets["rest"].length);
   gameAnimationEl.src = imageAssets["rest"][randomizer];
-  gameAnimationEl.alt = "a girl standing and looking back at you";
+  gameAnimationEl.alt = "a girl smiling and waving at you";
 });
 
 gameAnimationEl.addEventListener("mouseleave", function () {
   gameAnimationEl.src = "./assets/at_rest_1.png";
+  gameAnimationEl.alt = "a girl standing and looking back at you";
 });
 
 resetBtnEl.addEventListener("click", initTama);

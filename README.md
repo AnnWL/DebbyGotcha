@@ -71,6 +71,8 @@ Complete tasks to earn points and use those points to interact with Debbie and d
 
 4. **General Assembly – Tamagotchi Lab Guide** – Provided guidance and structure for the game's core logic and features.
 
+5. **[Music track: Fancy Park by Piki](https://freetouse.com/music)** - For background music; Free Music No Copyright
+
 ## Technologies Used
 
 - **HTML** – Markup structure for the application
