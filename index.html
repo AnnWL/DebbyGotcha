@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DebbyGotcha!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Gamifying Tasks - DebbyGotcha!</h1>
+    </header>
+    <div id="grid-container">
+      <div id="task">
+        <!-- Impute Task Section -->
+        <div class="task-input-section">
+          <form id="task-form">
+            <textarea placeholder="Enter a new task" id="task-input"></textarea>
+
+            <div class="priority-row">
+              <div class="priority-options">
+                <label>
+                  <input type="radio" name="priority" value="big" />
+                  Large <br />(10 pts)
+                </label>
+                <label>
+                  <input type="radio" name="priority" value="medium" checked />
+                  Medium <br />(5 pts)
+                </label>
+                <label>
+                  <input type="radio" name="priority" value="small" />
+                  Small <br />(1 pt)
+                </label>
+              </div>
+              <button id="add-task-button" type="submit" class="btn black">
+                Add Task
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Task List Section -->
+        <div class="task-list-section">
+          <ul id="to-do-list"></ul>
+        </div>
+
+        <!-- Points Section -->
+        <div class="points-section">
+          <h3>Pending Tasks: <span id="num_tasks">0</span></h3>
+          <h3>Total Points: <span id="total-points">0</span></h3>
+          <button id="clear-all-button" class="btn black">Clear All</button>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div id="tama">
+        <div id="stats-section">
+          <p class="stat-item" id="friendship_stat">
+            <span class="stat-label">Friendship:</span>
+            <span id="friendship-heart-row"> </span>
+          </p>
+
+          <p class="stat-item" id="hunger_stat">
+            <span class="stat-label">Hunger:</span>
+            <span id="hunger-heart-row"> </span>
+          </p>
+
+          <p class="stat-item" id="sleepiness-stat">
+            <span class="stat-label">Energy:</span>
+            <span id="sleepiness-heart-row"> </span>
+          </p>
+        </div>
+
+        <div class="animation-section">
+          <h2 id="message">Hello! I'm Debbie.</h2>
+          <img
+            src="./assets/at_rest_1.png"
+            class="game-graphic frame1"
+            id="animation"
+            src="./assets/at_rest_1.png"
+            width="300"
+          />
+        </div>
+        <div id="game-play-section">
+          <button id="restart" class="hidden">
+            <strong>Play Again?</strong>
+          </button>
+          <button id="play"><strong>Play</strong></button>
+          <button id="feed"><strong>Eat</strong></button>
+          <button id="sleep"><strong>Sleep</strong></button>
+        </div>
+      </div>
+    </div>
+    <script src="./app_todo.js"></script>
+    <script src="./app_tama.js"></script>
+  </body>
+</html>

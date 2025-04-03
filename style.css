@@ -1,0 +1,297 @@
+:root {
+  --bg-main: #f7e7d7;
+  --bg-tama: #fefefe;
+  --accent: black;
+  --hover: darkgrey;
+  --text-dark: #222;
+  --text-light: #444;
+  --spacing: 1rem;
+  --font-family: sans-serif;
+  --purple-btn: #f3e8f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+/* Header */
+header {
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Grid Container */
+#grid-container {
+  display: grid;
+  grid-row: 2;
+  grid-template-columns: 3fr 8fr;
+  gap: var(--spacing);
+  padding: var(--spacing);
+  overflow: hidden;
+}
+
+/* Task Container */
+#task {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: var(--bg-tama);
+  border-radius: 10px;
+  padding: var(--spacing);
+  overflow: hidden;
+}
+
+/* Tamagotchi Container */
+#tama {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: var(--bg-tama);
+  border-radius: 10px;
+  padding: var(--spacing);
+  overflow: hidden;
+  gap: var(--spacing);
+}
+
+/* Task Input Section */
+.task-input-section {
+  padding-bottom: var(--spacing);
+}
+
+/* Task List Section */
+.task-list-section {
+  overflow-y: auto;
+}
+
+/* Points Section */
+.points-section {
+  text-align: center;
+}
+
+/* Inputs */
+#task-input {
+  width: 100%;
+  height: 3rem;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+  margin-bottom: var(--spacing);
+}
+
+/* Priority Options + Button */
+.priority-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing);
+}
+
+.priority-options {
+  display: flex;
+  gap: var(--spacing);
+}
+
+.priority-options label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-light);
+}
+
+.priority-options input[type="radio"] {
+  accent-color: var(--accent);
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.black {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn.black:hover {
+  background-color: var(--hover);
+}
+
+/* Task List */
+#to-do-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#to-do-list li {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  position: relative;
+  font-size: 1rem;
+}
+
+.task {
+  margin-left: 0.75rem;
+  word-break: break-word;
+}
+
+.trash-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #707070;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+li:hover .trash-icon {
+  opacity: 1;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #4070f4;
+}
+
+input:checked ~ .task {
+  text-decoration: line-through;
+}
+
+/* Tamagotchi Sections */
+#stats-section,
+#game-play-section {
+  background-color: transparent;
+  padding: var(--spacing);
+  border-radius: 8px;
+}
+
+.animation-section {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+#stats-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+#stats-section p {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.stat-item {
+  display: grid;
+  grid-template-rows: auto auto;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+.heart-row {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 0.3rem;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.heart {
+  width: 20px;
+  height: auto;
+}
+
+.animation-container {
+  position: relative;
+  width: 300px;
+  height: auto;
+}
+
+#animation {
+  transition: opacity 0.5s ease-in-out;
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+
+#game-play-section {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  height: auto;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+#restart {
+  grid-row: 1;
+  grid-column: 1/4;
+}
+#play {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+#feed {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+#sleep {
+  grid-row: 2;
+  grid-column: 3;
+}
+
+#game-play-section button {
+  padding: 0.5rem 0.5rem;
+  border: none;
+  background-color: var(--purple-btn);
+  height: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+#game-play-section button:hover {
+  background-color: #e6d3ef;
+}
+
+.hidden {
+  display: none;
+}
