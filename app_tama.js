@@ -29,6 +29,18 @@ const messageAssets = {
   soup: "yum yum for the tum tum 😋",
   sleeping: "Good night! 💤",
 };
+
+const altAssets = {
+  dancing: "a girl dancing and smiling away",
+  shopping: "a girl carrying a shopping bag on her way to shopping",
+  crochet: "a girl doing knitting",
+  exercise: "a girl exercising",
+  coffee: "a girl enjoying her cold brew coffee",
+  seafood: "a girl eating seafood and displaying an expression of disgust",
+  soup: "a girl drinking soup",
+  sleeping: "a girl sleeping soundly",
+};
+
 let gameOver;
 let timer;
 let animationInterval;
@@ -159,11 +171,13 @@ function handlePlay() {
     const randomizer = Math.floor(Math.random() * playArr.length);
     const chosenActivity = playArr[randomizer];
     setAnimations(chosenActivity);
+    gameAnimationEl.alt = altAssets[chosenActivity];
     gameMessageEl.innerText = messageAssets[chosenActivity];
     state.boredom += 2;
     num_points -= 1;
   } else {
     gameAnimationEl.src = "./assets/angry_1.png";
+    gameAnimationEl.alt = "a girl angry and refusing to do any task";
     gameMessageEl.innerText = "Not enough points. Complete tasks first!";
   }
 }
@@ -173,10 +187,12 @@ function handleSleep() {
     const chosenActivity = "sleeping";
     setAnimations(chosenActivity);
     gameMessageEl.innerText = messageAssets[chosenActivity];
+    gameAnimationEl.alt = altAssets[chosenActivity];
     state.sleepiness = 10;
     num_points -= 5;
   } else {
     gameAnimationEl.src = "./assets/angry_1.png";
+    gameAnimationEl.alt = "a girl angry and refusing to do any task";
     gameMessageEl.innerText = "Not enough points. Complete tasks first!";
   }
 }
@@ -187,6 +203,7 @@ function handleEat() {
     const randomizer = Math.floor(Math.random() * foodArr.length);
     const chosenActivity = foodArr[randomizer];
     setAnimations(chosenActivity);
+    gameAnimationEl.alt = altAssets[chosenActivity];
     gameMessageEl.innerText = messageAssets[chosenActivity];
     state.hunger += 2;
     num_points -= 2;
@@ -195,6 +212,7 @@ function handleEat() {
     }
   } else {
     gameAnimationEl.src = "./assets/angry_1.png";
+    gameAnimationEl.alt = "a girl angry and refusing to do any task";
     gameMessageEl.innerText = "Not enough points. Complete tasks first!";
   }
 }
@@ -212,6 +230,7 @@ sleepBtnEl.addEventListener("click", handleSleep);
 gameAnimationEl.addEventListener("mouseenter", function () {
   const randomizer = Math.floor(Math.random() * imageAssets["rest"].length);
   gameAnimationEl.src = imageAssets["rest"][randomizer];
+  gameAnimationEl.alt = "a girl standing and looking back at you";
 });
 
 gameAnimationEl.addEventListener("mouseleave", function () {
