@@ -84,14 +84,8 @@ Complete tasks to earn points and use those points to interact with Debbie and d
 - **Visual Cues for Tasks Prioritisation:**
   Color coding task based on task size/priorities
 
-- **Encapsulation:**
-  Functions for task management and game logic are namespaced to avoid global conflicts.
-
 - **Enhanced Animations:**
   Improve animation smoothness and refine timing for a more polished and engaging user experience.
-
-- **Audio Integration:**
-  Add sound effects and background music to enrich the gameplay experience.
 
 - **Persistent Data Storage & User Accounts:**
   Enable user login and store user progress using persistent storage.
