@@ -69,7 +69,7 @@ Complete tasks to earn points and use those points to interact with Debbie and d
 3. **Tamagotchi UI Prototype** on [Figma](https://www.figma.com/community/file/948878461090991148/tamagotchi-concept) –
    Used as inspiration for the user interface and overall visual style.
 
-4. **General Assembly – Tamagotchi Lab Guide** – Provided guidance and structure for the game's core logic and features.
+4. **General Assembly – Tamagotchi Lab Guide** – Provided guidance and structure for the tamagotchi game's core logic and features.
 
 5. **[Music track: Fancy Park by Piki](https://freetouse.com/music)** - For background music; Free Music No Copyright
 
